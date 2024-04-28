@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "kMeans": {
+      "commandName": "Project",
+      "workingDirectory": "",
+      "commandLineArgs": "--inputCSVFilename \"${workspaceFolder}\\examples\\bezdekIris.csv\" --outputCSVFilename \"${workspaceFolder}\\example-output\\bezdekIris-Output.csv\" --numberOfClusters 3 --headerRow true"
+    }
+  }
+}
