@@ -104,6 +104,23 @@ namespace kMeans
             return data;
         }
 
+        /// <summary>
+        /// Normalize the data using MinMax
+        /// </summary>
+        /// <param name="mlContext">MLContext</param>
+        /// <param name="data">Data whose features will be normalized</param>
+        /// <returns>Normalized data</returns>
+        public static IDataView Normalize(MLContext mlContext, IDataView data)
+        {
+            var featureColumns = data.Schema
+            .Select( col => col.Name)
+            .Where(col => col != "Label")
+            .Select( col => new InputOutputColumnPair(col, col))
+            .ToArray();
+            var scaling = mlContext.Transforms.NormalizeMinMax(featureColumns);
+            var scaledData = scaling.Fit(data).Transform(data);
+            return scaledData;
+        }
 
         /// <summary>
         /// Writes the results of this clustiner to the filename specified. 
