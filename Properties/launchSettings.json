@@ -3,7 +3,7 @@
     "kMeans": {
       "commandName": "Project",
       "workingDirectory": "",
-      "commandLineArgs": "--inputCSVFilename \"${workspaceFolder}\\examples\\bezdekIris.csv\" --outputCSVFilename \"${workspaceFolder}\\example-output\\bezdekIris-Output.csv\" --numberOfClusters 3 --headerRow true"
+      "commandLineArgs": "--inputCSVFilename \"${workspaceFolder}\\..\\walletHolderData\\holders.csv\" --outputCSVFilename \"${workspaceFolder}\\walletHolderData\\holders-output.csv\" --numberOfClusters 3 --headerRow true"
     }
   }
 }
